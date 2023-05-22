@@ -1,0 +1,71 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: "Inter var", sans-serif;
+    }
+}
+
+html,
+body,
+#__next {
+    @apply h-full w-full;
+}
+
+body {
+    @apply bg-slate-100 text-sm;
+}
+
+@layer components {
+    .tab {
+    }
+}
+
+@layer utilities {
+    .text-shadow {
+        @apply [text-shadow:_2px_2px_3px_rgba(0,0,0,0.8)];
+    }
+}
+
+@layer utilities {
+    .orphans {
+        @apply [orphans:2];
+    }
+}
+
+.floor-text-three-line {
+    line-height: 1.5rem;
+    max-height: 5rem;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* .wallet-adapter-button {
+    @apply !bg-transparent !text-sm !font-normal !uppercase hover:!border-b-4 hover:!border-ecogreen-500 hover:!bg-transparent;
+} */
+
+.stepper svg {
+    color: #6f9d02;
+}
+
+.stepper.unactive svg {
+    color: #a6a6a6;
+}
+
+.stepper:hover:not(.unactive) svg {
+    color: white;
+}
+.wallet-adapter-button-trigger {
+    @apply !bg-[#00AEEF] !text-sm !leading-4 hover:!bg-[#0ca8e1];
+}

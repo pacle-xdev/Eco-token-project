@@ -1,0 +1,72 @@
+
+Site:  https://app.regen.network/project/C02-002
+image link: https://regen-registry-server.herokuapp.com/image/projects/C02/sandy-cross.jpg
+
+
+title: Sandy Cross Forest Preservation Project
+
+intro:
+The Sandy Cross Forest Preservation Project is a 132-acre Project Area on a 214-acre property in the Mansfield metro area. Western Reserve Land Conservancy is seeking to preserve the Project, creating substantial conservation and community benefits including carbon sequestration, wildlife habitat, and open space protection.
+
+project:
+<p>The Sandy Cross Forest Preservation Project is a 132-acre Project Area on a 214-acre property in the Mansfield metro area. Western Reserve Land Conservancy is seeking to preserve the Project, creating substantial conservation and community benefits including carbon sequestration, wildlife habitat, and open space protection. </p> 
+<p>Preservation of the Project is important as intact forests of this size are becoming increasingly rare in Richland County due to agricultural development and urban expansion. Indeed, surrounding forested land is being rapidly converted into agricultural land and is facing a continued threat of urban expansion from the adjacent Village of Lexington.
+</p> <p>The Project contains a diverse, 85-year forest including yellow poplar, sugar maple, oak, black cherry, and pine. Preservation of this forest will offer the residents of Northeast Ohio a wide variety of community and conservation benefits.</p>
+
+overview:
+<p><b>Offset Generation Method</b><br>Avoided Emissions</p>
+<p><b>Project Activity</b><br>Tree Preservation</p>
+<p><b>Project Type</b><br>Agriculture Forestry and Other Land Use</p>
+<p><b>Documents</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2021/07/Sandy-Cross-Project-Design-Document-1.pdf" target="_new">Project Design Document</a></p>
+<p><b>Reference ID (cfc project id)</b><br><a href="https://www.cityforestcredits.org/carbon-credits/carbon-registry/mansfield-forest-carbon-offsets/" target="_new">Sandy Cross Forest</a></p>
+<p><b>Offset Protocol</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2022/07/City-Forest-Preservation-Protocol-40-Years-V11.40.pdf" target="_new">Preservation Protocol - 40 years</a></p>
+
+
+
+    {
+        title: "Sandy Cross Forest Preservation Project",
+        shortTitle: "Sandy Cross Forest Preservation",
+        identifier: "Sandycross001",
+        producer: "Western Reserve Land Conservatory",
+        intro: "The Sandy Cross Forest Preservation Project is a 132-acre Project Area on a 214-acre property in the Mansfield metro area. Western Reserve Land Conservancy is seeking to preserve the Project, creating substantial conservation and community benefits including carbon sequestration, wildlife habitat, and open space protection.",
+        location: "Lexington",
+        benefits: ["Preservation", "Wildlife Habitat", "Climate"],
+        project: `<p>The Sandy Cross Forest Preservation Project is a 132-acre Project Area on a 214-acre property in the Mansfield metro area. Western Reserve Land Conservancy is seeking to preserve the Project, creating substantial conservation and community benefits including carbon sequestration, wildlife habitat, and open space protection. </p> 
+        <p>Preservation of the Project is important as intact forests of this size are becoming increasingly rare in Richland County due to agricultural development and urban expansion. Indeed, surrounding forested land is being rapidly converted into agricultural land and is facing a continued threat of urban expansion from the adjacent Village of Lexington.
+        </p> <p>The Project contains a diverse, 85-year forest including yellow poplar, sugar maple, oak, black cherry, and pine. Preservation of this forest will offer the residents of Northeast Ohio a wide variety of community and conservation benefits.</p>`,
+        overview: `<p><b>Offset Generation Method</b><br>Avoided Emissions</p>
+        <p><b>Project Activity</b><br>Tree Preservation</p>
+        <p><b>Project Type</b><br>Agriculture Forestry and Other Land Use</p>
+        <p><b>Documents</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2021/07/Sandy-Cross-Project-Design-Document-1.pdf" target="_new">Project Design Document</a></p>
+        <p><b>Reference ID (cfc project id)</b><br><a href="https://www.cityforestcredits.org/carbon-credits/carbon-registry/mansfield-forest-carbon-offsets/" target="_new">Sandy Cross Forest</a></p>
+        <p><b>Offset Protocol</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2022/07/City-Forest-Preservation-Protocol-40-Years-V11.40.pdf" target="_new">Preservation Protocol - 40 years</a></p>`,
+        process: "",
+        listImage:
+            "https://regen-registry-server.herokuapp.com/image/projects/C02/sandy-cross.jpg",
+        headImage:
+            "https://regen-registry-server.herokuapp.com/image/projects/C02/sandy-cross.jpg",
+        site: "ecoToken",
+        status: "ACTIVE",
+        creditType: "CARBON",
+        fundAmount: 0,
+        fundRecieved: 0,
+        return: 0,
+        dateStart: new Date("2021-10-14"),
+        dateEnd: new Date("2061-10-14"),
+    },
+
+
+    {
+        project: "Sandycross001",
+        seriesName: "Sandycross001",
+        seriesImage: "",
+        seriesType: "C02",
+        regenBatch: "C02-002-20211012-20241013-001",
+        setAmount: 5553,
+        totalCredits: 6497,
+        creditPrice: 30.25,
+        retireWallet: "",
+        recieveWallet: "",
+        creditWallet: "",
+        creditKey: "",
+    },

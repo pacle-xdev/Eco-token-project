@@ -1,0 +1,69 @@
+/*
+ * Copyright (C) 2023 EcoToken Systems
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+.react-tabs {
+    display: flex;
+    margin-left: 36px;
+    border: 1px solid #3c3e43;
+    color: white;
+    background: #dbdbdb;
+}
+
+.react-tabs__tab-list {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    background: #b6b6b6;
+}
+
+.react-tabs__tab {
+    list-style: none;
+    padding: 12px 6px;
+    cursor: pointer;
+    color: #000000;
+}
+
+.react-tabs__tab--selected {
+    background: #ffffff;
+    border-color: #1c1d1f;
+    border-left: 4px solid #6eb800;
+    color: black;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+    width: 100%;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+}
+
+.react-tabs__tab {
+    padding-left: 24px;
+}
+
+.react-tabs__tab--selected {
+    padding-left: 21px;
+}
+
+.panel-content {
+    text-align: center;
+}

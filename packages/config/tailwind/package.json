@@ -1,0 +1,22 @@
+{
+	"name": "@ecotoken/tailwind-config",
+	"version": "0.0.0",
+	"main": "index.js",
+	"files": [
+		"index.js",
+		"postcss.js"
+	],
+	"scripts": {
+		"dev": "tailwind-config-viewer --config index.js --port 3002"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.13",
+		"postcss": "^8.4.21",
+		"tailwind-config-viewer": "^1.7.2",
+		"tailwindcss": "^3.2.7"
+	},
+	"dependencies": {
+		"@headlessui/tailwindcss": "^0.1.2"
+	},
+	"license": "AGPL-3.0-or-later"
+}

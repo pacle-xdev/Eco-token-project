@@ -1,276 +1,174 @@
-Contribution: 2019-04-05 20:00
+# create-t3-turbo
 
-Contribution: 2019-04-05 20:01
+<img width="1758" alt="turbo2" src="https://user-images.githubusercontent.com/51714798/202427720-4ec5f285-41a5-4fed-a52f-20b89c5bc1b3.png">
 
-Contribution: 2019-04-08 20:00
+## About
 
-Contribution: 2019-04-08 20:01
+Ever wondered how to migrate your T3 application into a monorepo? Stop right here! This is the perfect starter repo to get you running with the perfect stack!
 
-Contribution: 2019-04-18 20:00
+It uses [Turborepo](https://turborepo.org/) and contains:
 
-Contribution: 2019-04-18 20:01
+```
+.github
+  └─ workflows
+        └─ CI with pnpm cache setup
+.vscode
+  └─ Recommended extensions and settings for VSCode users
+apps
+  ├─ expo
+  |   ├─ Expo SDK 46
+  |   ├─ React Native using React 18
+  |   ├─ Tailwind using Nativewind
+  |   └─ Typesafe API calls using tRPC
+  └─ next.js
+      ├─ Next.js 13
+      ├─ React 18
+      ├─ TailwindCSS
+      └─ E2E Typesafe API Server & Client
+packages
+ ├─ api
+ |   └─ tRPC v10 router definition
+ ├─ auth
+     └─ authentication using next-auth. **NOTE: Only for Next.js app, not Expo**
+ └─ db
+     └─ typesafe db-calls using Prisma
+```
 
-Contribution: 2019-04-18 20:02
+## Quick Start
 
-Contribution: 2019-04-24 20:00
+To get it running, follow the steps below:
 
-Contribution: 2019-04-24 20:01
+### Setup dependencies
 
-Contribution: 2019-04-24 20:02
+```diff
+# Install dependencies
+pnpm i
 
-Contribution: 2019-04-29 20:00
+# In packages/db/prisma update schema.prisma provider to use sqlite
+# or use your own database provider
+- provider = "postgresql"
++ provider = "sqlite"
 
-Contribution: 2019-05-01 20:00
+# Configure environment variables.
+# There is an `.env.example` in the root directory you can use for reference
+cp .env.example .env
 
-Contribution: 2019-05-01 20:01
+# Push the Prisma schema to your database
+pnpm db-push
+```
 
-Contribution: 2019-05-01 20:02
+### Configure Expo `dev`-script
 
-Contribution: 2019-05-06 20:00
+> **Note:** If you want to use a physical phone with Expo Go, just run `pnpm dev` and scan the QR-code.
 
-Contribution: 2019-05-08 20:00
+#### Use iOS Simulator
 
-Contribution: 2019-05-08 20:01
+1. Make sure you have XCode and XCommand Line Tools installed [as shown on expo docs](https://docs.expo.dev/workflow/ios-simulator/).
+2. Change the `dev` script at `apps/expo/package.json` to open the iOS simulator.
 
-Contribution: 2019-05-14 20:00
+```diff
++  "dev": "expo start --ios",
+```
 
-Contribution: 2019-05-14 20:01
+3. Run `pnpm dev` at the project root folder.
 
-Contribution: 2019-05-14 20:02
+#### For Android
 
-Contribution: 2019-05-15 20:00
+1. Install Android Studio tools [as shown on expo docs](https://docs.expo.dev/workflow/android-studio-emulator/).
+2. Change the `dev` script at `apps/expo/package.json` to open the Android emulator.
 
-Contribution: 2019-05-15 20:01
+```diff
++  "dev": "expo start --android",
+```
 
-Contribution: 2019-05-21 20:00
+3. Run `pnpm dev` at the project root folder.
 
-Contribution: 2019-05-22 20:00
+## Deployment
 
-Contribution: 2019-05-24 20:00
+### Next.js
 
-Contribution: 2019-05-24 20:01
+#### Prerequisites
 
-Contribution: 2019-05-28 20:00
+_We do not recommend deploying a SQLite database on serverless environments since the data wouldn't be persisted. I provisioned a quick Postgresql database on [Railway](https://railway.app), but you can of course use any other database provider. Make sure the prisma schema is updated to use the correct database._
 
-Contribution: 2019-05-28 20:01
+#### Deploy to Vercel
 
-Contribution: 2019-06-06 20:00
+Let's deploy the Next.js application to [Vercel](https://vercel.com/). If you have ever deployed a Turborepo app there, the steps are quite straightforward. You can also read the [official Turborepo guide](https://vercel.com/docs/concepts/monorepos/turborepo) on deploying to Vercel.
 
-Contribution: 2019-06-06 20:01
+1. Create a new project on Vercel, select the `apps/nextjs` folder as the root directory and apply the following build settings:
 
-Contribution: 2019-06-11 20:00
+<img width="927" alt="Vercel deployment settings" src="https://user-images.githubusercontent.com/11340449/201974887-b6403a32-5570-4ce6-b146-c486c0dbd244.png">
 
-Contribution: 2019-06-11 20:01
+> The install command filters out the expo package and saves a few second (and cache size) of dependency installation. The build command makes us build the application using Turbo.
 
-Contribution: 2019-06-13 20:00
+2. Add your `DATABASE_URL` environment variable.
 
-Contribution: 2019-06-13 20:01
+3. Done! Your app should successfully deploy. Assign your domain and use that instead of `localhost` for the `url` in the Expo app so that your Expo app can communicate with your backend when you are not in development.
 
-Contribution: 2019-06-13 20:02
+### Expo
 
-Contribution: 2019-06-18 20:00
+Deploying your Expo application works slightly differently compared to Next.js on the web. Instead of "deploying" your app online, you need to submit production builds of your app to the app stores, like [Apple App Store](https://www.apple.com/app-store/) and [Google Play](https://play.google.com/store/apps). You can read the full [Distributing your app](https://docs.expo.dev/distribution/introduction/), including best practices, in the Expo docs.
 
-Contribution: 2019-06-21 20:00
+1. Let's start by setting up [EAS Build](https://docs.expo.dev/build/introduction/), which is short for Expo Application Services. The build service helps you create builds of your app, without requiring a full native development setup. The commands below are a summary of [Creating your first build](https://docs.expo.dev/build/setup/).
 
-Contribution: 2019-06-21 20:01
+    ```bash
+    // Install the EAS CLI
+    $ pnpm add -g eas-cli
 
-Contribution: 2019-06-21 20:02
+    // Log in with your Expo account
+    $ eas login
 
-Contribution: 2019-06-25 20:00
+    // Configure your Expo app
+    $ cd apps/expo
+    $ eas build:configure
+    ```
 
-Contribution: 2019-06-25 20:01
+2. After the initial setup, you can create your first build. You can build for Android and iOS platforms and use different [**eas.json** build profiles](https://docs.expo.dev/build-reference/eas-json/) to create production builds or development, or test builds. Let's make a production build for iOS.
 
-Contribution: 2019-06-28 20:00
+    ```
+    $ eas build --platform ios --profile production
+    ```
 
-Contribution: 2019-06-28 20:01
+    > If you don't specify the `--profile` flag, EAS uses the `production` profile by default.
 
-Contribution: 2019-07-03 20:00
+3. Now that you have your first production build, you can submit this to the stores. [EAS Submit](https://docs.expo.dev/submit/introduction/) can help you send the build to the stores.
 
-Contribution: 2019-07-03 20:01
+    ```
+    $ eas submit --platform ios --latest
+    ```
 
-Contribution: 2019-07-04 20:00
+    > You can also combine build and submit in a single command, using `eas build ... --auto-submit`.
 
-Contribution: 2019-07-05 20:00
+4. Before you can get your app in the hands of your users, you'll have to provide additional information to the app stores. This includes screenshots, app information, privacy policies, etc. _While still in preview_, [EAS Metadata](https://docs.expo.dev/eas/metadata/) can help you with most of this information.
 
-Contribution: 2019-07-05 20:01
+5. Once everything is approved, your users can finally enjoy your app. Let's say you spotted a small typo; you'll have to create a new build, submit it to the stores, and wait for approval before you can resolve this issue. In these cases, you can use EAS Update to quickly send a small bugfix to your users without going through this long process. Let's start by setting up EAS Update.
 
-Contribution: 2019-07-08 20:00
+    The steps below summarize the [Getting started with EAS Update](https://docs.expo.dev/eas-update/getting-started/#configure-your-project) guide.
 
-Contribution: 2019-07-08 20:01
+    ```bash
+    // Add the `expo-updates` library to your Expo app
+    $ cd apps/expo
+    $ pnpm expo install expo-updates
 
-Contribution: 2019-07-11 20:00
+    // Configure EAS Update
+    $ eas update:configure
+    ```
 
-Contribution: 2019-07-15 20:00
+6. Before we can send out updates to your app, you have to create a new build and submit it to the app stores. For every change that includes native APIs, you have to rebuild the app and submit the update to the app stores. See steps 2 and 3.
 
-Contribution: 2019-07-15 20:01
+7. Now that everything is ready for updates, let's create a new update for `production` builds. With the `--auto` flag, EAS Update uses your current git branch name and commit message for this update. See [How EAS Update works](https://docs.expo.dev/eas-update/how-eas-update-works/#publishing-an-update) for more information.
 
-Contribution: 2019-07-17 20:00
+    ```bash
+    $ cd apps/expo
+    $ eas update --auto
+    ```
 
-Contribution: 2019-07-17 20:01
+    > Your OTA (Over The Air) updates must always follow the app store's rules. You can't change your app's primary functionality without getting app store approval. But this is a fast way to update your app for minor changes and bug fixes.
 
-Contribution: 2019-07-22 20:00
+8. Done! Now that you have created your production build, submitted it to the stores, and installed EAS Update, you are ready for anything!
 
-Contribution: 2019-07-22 20:01
+## References
 
-Contribution: 2019-07-24 20:00
+The stack originates from [create-t3-app](https://github.com/t3-oss/create-t3-app).
 
-Contribution: 2019-07-24 20:01
-
-Contribution: 2019-07-24 20:02
-
-Contribution: 2019-07-26 20:00
-
-Contribution: 2019-08-01 20:00
-
-Contribution: 2019-08-05 20:00
-
-Contribution: 2019-08-05 20:01
-
-Contribution: 2019-08-05 20:02
-
-Contribution: 2019-08-06 20:00
-
-Contribution: 2019-08-07 20:00
-
-Contribution: 2019-08-07 20:01
-
-Contribution: 2019-08-09 20:00
-
-Contribution: 2019-08-21 20:00
-
-Contribution: 2019-08-21 20:01
-
-Contribution: 2019-08-21 20:02
-
-Contribution: 2019-08-23 20:00
-
-Contribution: 2019-08-23 20:01
-
-Contribution: 2019-08-23 20:02
-
-Contribution: 2019-08-26 20:00
-
-Contribution: 2019-08-28 20:00
-
-Contribution: 2019-08-28 20:01
-
-Contribution: 2019-08-28 20:02
-
-Contribution: 2019-09-04 20:00
-
-Contribution: 2019-09-04 20:01
-
-Contribution: 2019-09-04 20:02
-
-Contribution: 2019-09-09 20:00
-
-Contribution: 2019-09-12 20:00
-
-Contribution: 2019-09-12 20:01
-
-Contribution: 2019-09-12 20:02
-
-Contribution: 2019-09-13 20:00
-
-Contribution: 2019-09-16 20:00
-
-Contribution: 2019-09-16 20:01
-
-Contribution: 2019-09-25 20:00
-
-Contribution: 2019-09-25 20:01
-
-Contribution: 2019-09-27 20:00
-
-Contribution: 2019-10-02 20:00
-
-Contribution: 2019-10-02 20:01
-
-Contribution: 2019-10-11 20:00
-
-Contribution: 2019-10-15 20:00
-
-Contribution: 2019-10-15 20:01
-
-Contribution: 2019-10-16 20:00
-
-Contribution: 2019-10-16 20:01
-
-Contribution: 2019-10-17 20:00
-
-Contribution: 2019-10-17 20:01
-
-Contribution: 2019-10-17 20:02
-
-Contribution: 2019-10-23 20:00
-
-Contribution: 2019-10-24 20:00
-
-Contribution: 2019-10-24 20:01
-
-Contribution: 2019-10-24 20:02
-
-Contribution: 2019-10-29 20:00
-
-Contribution: 2019-10-30 20:00
-
-Contribution: 2019-10-30 20:01
-
-Contribution: 2019-10-30 20:02
-
-Contribution: 2019-11-05 20:00
-
-Contribution: 2019-11-11 20:00
-
-Contribution: 2019-11-11 20:01
-
-Contribution: 2019-11-11 20:02
-
-Contribution: 2019-11-13 20:00
-
-Contribution: 2019-11-18 20:00
-
-Contribution: 2019-11-25 20:00
-
-Contribution: 2019-11-27 20:00
-
-Contribution: 2019-11-27 20:01
-
-Contribution: 2019-12-02 20:00
-
-Contribution: 2019-12-02 20:01
-
-Contribution: 2019-12-02 20:02
-
-Contribution: 2019-12-04 20:00
-
-Contribution: 2019-12-04 20:01
-
-Contribution: 2019-12-04 20:02
-
-Contribution: 2019-12-05 20:00
-
-Contribution: 2019-12-06 20:00
-
-Contribution: 2019-12-06 20:01
-
-Contribution: 2019-12-09 20:00
-
-Contribution: 2019-12-09 20:01
-
-Contribution: 2019-12-10 20:00
-
-Contribution: 2019-12-10 20:01
-
-Contribution: 2019-12-10 20:02
-
-Contribution: 2019-12-11 20:00
-
-Contribution: 2019-12-11 20:01
-
-Contribution: 2019-12-11 20:02
-
-Contribution: 2019-12-18 20:00
-
-Contribution: 2019-12-18 20:01
-
+A [blog post](https://jumr.dev/blog/t3-turbo) where I wrote how to migrate a T3 app into this.

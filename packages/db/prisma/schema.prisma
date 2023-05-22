@@ -1,0 +1,314 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider     = "mysql"
+    url          = env("DATABASE_URL")
+    relationMode = "prisma"
+}
+
+model Permission {
+    permissionID String     @id @default(cuid())
+    domain       UserDomain
+    permission   String     @unique
+    description  String?    @db.Text
+
+    roles Role[]
+
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("permission")
+}
+
+enum UserDomain {
+    ADMIN
+    USER
+}
+
+model Role {
+    roleID      String     @id @default(cuid())
+    domain      UserDomain
+    scope       RoleScope  @default(DEFAULT)
+    role        String
+    description String?    @db.Text
+
+    permissions Permission[]
+    sites       Site[]
+    adminUsers  AdminUser[]
+    users       User[]
+
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("role")
+}
+
+enum RoleScope {
+    DEFAULT
+    SITE
+}
+
+model User {
+    userID        String  @id @default(cuid())
+    walletAddress String
+    companyName   String?
+    firstName     String?
+    lastName      String?
+    username      String?
+    email         String?
+
+    site   Site   @relation(fields: [siteID], references: [siteID])
+    siteID String
+    role   Role   @relation(fields: [roleID], references: [roleID])
+    roleID String
+
+    projects         EcoProject[] @relation(name: "Producer")
+    verifierProjects EcoProject[] @relation(name: "Verifier")
+    orders           EcoOrder[]
+
+    isDelete  Boolean  @default(false)
+    isDisable Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@unique([username, siteID])
+    @@unique([email, siteID])
+    @@unique([walletAddress, siteID])
+    @@unique([companyName, siteID])
+    @@index([siteID])
+    @@index([roleID])
+    @@map("user")
+}
+
+model AdminUser {
+    adminID   String    @id @default(cuid())
+    username  String    @unique
+    password  String
+    email     String
+    firstName String
+    lastName  String?
+    lastLogin DateTime?
+    expireAt  DateTime?
+    hits      Int       @default(0)
+
+    role   Role   @relation(fields: [roleID], references: [roleID])
+    roleID String
+
+    isActive  Boolean  @default(true)
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([roleID])
+    @@map("admin_user")
+}
+
+model Site {
+    siteID      String  @id @default(cuid())
+    siteName    String
+    legalName   String?
+    mailAddress String?
+    prodUrl     String? @unique
+    stageUrl    String? @unique
+    devUrl      String? @unique
+
+    users     User[]
+    roles     Role[]
+    locations EcoLocation[]
+    projects  EcoProject[]
+
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("site")
+}
+
+model EcoLocation {
+    locationID String @id @default(cuid())
+    areaID     Int    @default(autoincrement()) @db.UnsignedSmallInt
+    location   String
+    cn         String
+    st         String
+
+    site     Site         @relation(fields: [siteID], references: [siteID])
+    siteID   String
+    projects EcoProject[]
+
+    isDelete  Boolean  @default(false)
+    updatedAt DateTime @updatedAt
+
+    @@index([areaID])
+    @@index([siteID])
+    @@map("eco_location")
+}
+
+model EcoBenefit {
+    benefitID String  @id @default(cuid())
+    ord       Int     @default(0)
+    bftTitle  String
+    benefit   String
+    photo     String?
+
+    projects EcoProject[]
+
+    isVisible Boolean  @default(true)
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("eco_benefit")
+}
+
+model EcoProject {
+    projectID  String        @id @default(cuid())
+    ord        Int           @default(0)
+    title      String
+    shortTitle String
+    identifier String
+    intro      String?       @db.Text
+    project    String?       @db.Text
+    overview   String?       @db.Text
+    process    String?       @db.Text
+    status     ProjectStatus
+    creditType CreditType
+    producer   User          @relation(name: "Producer", fields: [producerID], references: [userID])
+    producerID String
+
+    location   EcoLocation? @relation(fields: [locationID], references: [locationID])
+    locationID String?
+    verifier   User?        @relation(name: "Verifier", fields: [verifierID], references: [userID])
+    verifierID String?
+    benefits   EcoBenefit[]
+    nftSeries  NFTSeries?
+
+    listImage String? @db.Text
+    headImage String? @db.Text
+
+    fundAmount   Int?
+    fundRecieved Int?
+    return       Decimal? @db.Decimal(5, 2)
+    payback      Decimal? @db.Decimal(5, 2)
+    duration     String?
+    period       String?
+
+    dateStart    DateTime?
+    dateEnd      DateTime?
+    needsFunding Boolean   @default(false)
+    isFeatured   Boolean   @default(false)
+    isVisible    Boolean   @default(true)
+
+    isDelete  Boolean  @default(false)
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    site   Site   @relation(fields: [siteID], references: [siteID])
+    siteID String
+
+    @@index([siteID])
+    @@index([locationID])
+    @@index([producerID])
+    @@index([verifierID])
+    @@map("eco_project")
+}
+
+enum CreditType {
+    CARBON
+    WATER
+    HABITAT
+}
+
+enum ProjectStatus {
+    DATA_ENTRY
+    NEW
+    UNFUNDED
+    ACTIVE
+    COMPLETED
+}
+
+enum ProjectType {
+    FUNDED_PROJECT
+    CARBON_CREDIT
+    WATER_CREDIT
+}
+
+model NFTSeries {
+    nftSeriesID String @id @default(cuid())
+
+    project   EcoProject @relation(fields: [projectID], references: [projectID])
+    projectID String     @unique
+
+    orders EcoOrder[]
+
+    seriesName    String
+    seriesNumber  Int      @default(autoincrement()) @db.UnsignedSmallInt
+    seriesImage   String
+    seriesType    String
+    retireWallet  String
+    recieveWallet String
+    creditWallet  String
+    creditKey     String
+    regenBatch    String
+    setAmount     Decimal? @db.Decimal(12, 2)
+    totalCredits  Decimal  @db.Decimal(12, 2)
+    creditPrice   Decimal  @db.Decimal(12, 2)
+
+    isActive  Boolean  @default(true)
+    createdAt DateTime @default(now())
+
+    @@index([projectID])
+    @@index([seriesNumber])
+    @@map("nft_series")
+}
+
+model EcoOrder {
+    ecoOrderID String @id @default(cuid())
+
+    nftSeries   NFTSeries @relation(fields: [nftSeriesID], references: [nftSeriesID], onDelete: Cascade)
+    nftSeriesID String
+    user        User      @relation(fields: [userID], references: [userID], onDelete: Cascade)
+    userID      String
+
+    status           EcoOrderStatus   @default(PROCESSING)
+    userWallet       String
+    creditsPurchased Decimal          @db.Decimal(12, 6)
+    currency         PurchaseCurrency
+    payAmount        Decimal          @db.Decimal(12, 6)
+    payFee           Decimal          @db.Decimal(12, 6)
+    payHash          String
+    retireBy         String
+    ecoWallet        String
+    retireWallet     String
+    creditWallet     String
+    creditKey        String
+    retireFee        Decimal?         @db.Decimal(12, 6)
+    retireHash       String?
+    createdAt        DateTime         @default(now())
+    isDelete         Boolean          @default(false)
+
+    @@index([nftSeriesID])
+    @@index([userID])
+    @@map("eco_order")
+}
+
+enum PurchaseCurrency {
+    SOL
+    USDC
+}
+
+enum EcoOrderStatus {
+    PROCESSING
+    FUNDS_RECIEVED
+    REQUEST_TO_RETIRE
+    CREDITS_RETIRED
+    NFT_BEING_MINTED
+    NFT_IN_YOUR_WALLET
+    ORDER_COMPLETE
+}

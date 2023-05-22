@@ -1,0 +1,38 @@
+
+Site:  https://www.rh2o.app/project/solar-desalination-plant-class-i-water-credits-rh2o-potable
+image link: https://uploads-ssl.webflow.com/63656aa500afee41c414c3a1/63a05bbb406f2ffd64b7b259_Rectangle%203.jpg
+
+user-producer 
+companyName: Wacomet Water Co. 
+firstName: Aaron 
+LastName: Mandell
+email:aaron@wacomet.com 
+role: producer
+
+
+project:
+
+<h3>About</h3>
+<p>The project represents the first full-scale, renewable-energy powered, zero discharge desalination plant capable of regenerating fresh water from saltwater using advanced desalination. The project utilizes distributed desalination, which differs greatly from conventional coastal desalination, because solar energy is used to treat inland-brackish water with no brine discharge and 100% water recovery.</p>
+
+<p>This results in near zero environmental impact as the residual salts are recovered and recycled as usable solids and converted into value-added byproducts. Using solar energy to power desalination lowers the carbon footprint, enables co-generation of both clean energy and affordable water and accelerates project deployment.
+
+<p>This plant will generate two million gallons a day (2MGD) of ultra-clean water for large tech companies in Santa Clara Valley and provide a direct, verifiable and highly impactful technology solution to achieve corporate water goals.</p>
+
+<h3>Problem</h3>
+<p>In recent years, although many global companies have committed to being water neutral or water positive, the water neutrality concept is still not well defined. It was initially defined as reducing the water footprint of an activity as much as reasonably possible and offsetting the negative externalities. However, water neutrality does not necessarily mean water is compensated or replaced with the generation of new water, without which, we cannot balance the water system long term.</p>
+
+<h3>Outcomes</h3>
+<p>The intended outcome of this project is for water users to become 100% water neutral in Northern California with the direct gallon-for-gallon replacement of water using distributed desalination. Any corporation can now claim credit for replacing water consumed from the local water utility, across multiple operating locations, by directly sourcing desalinated water. In addition, the physical water that is generated from the desalination plant will go to the benefit of all water users by displacing water at the wholesale level that would otherwise have come from declining natural supplies.</p>
+
+
+<p><b></b><br></p>
+
+
+overview:
+<p><b>Location</b><br>Central Valley, California</p>
+<p><b>Project Type</b><br>Solar-powered Desalination of saline (brackish) agricultural water</p>
+<p><b>Distribution</b><br>Water distributed within the existing state & federal aqueduct system.</p>
+<p><b>Product quality</b><br>Zero discharge distributed desalination</p>
+<p><b>Land footprint:</b><br>Phase I 8,000 m3/day of clean water and 8,000 m3/day of RH2O water credits</p>
+<p><b>Output</b><br></p>

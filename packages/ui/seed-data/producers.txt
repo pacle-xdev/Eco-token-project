@@ -1,0 +1,67 @@
+
+PRODUCERS
+
+Role: Producer
+
+
+
+========= 
+
+companyName: NOAH Solutions
+website (put in LastName): http://noahsolutions.ca/
+
+=========
+
+companyName: 
+website (put in LastName): https://www.rh2o.app
+email:aaron@wacomet.com 
+
+=========
+
+companyName: Western Reserve Land Conservancy 
+website (put in LastName): https://wrlandconservancy.org/
+
+=========
+
+companyName: King County Department of Natural Resources and Parks
+website (put in LastName): https://kingcounty.gov/depts/dnrp.aspx
+
+========= 
+
+    {
+        email: "alan@noahsolutions.com",
+        walletAddress: "1",
+        firstName: "Alan",
+        lastName: "http://noahsolutions.ca/",
+        username: "alan",
+        role: "Producer",
+        site: "ecoToken",
+        companyName: "NOAH Solutions",
+    },
+    {
+        email: "aaron@wacomet.com ",
+        walletAddress: "2",
+        firstName: "Alan",
+        lastName: "https://www.rh2o.app",
+        username: "aaron",
+        role: "Producer",
+        site: "ecoTokenp",
+        companyName: "Wacomet Water Co.",
+    },
+    {
+        email: "verifier@gmail.com",
+        walletAddress: "3",
+        lastName: "https://wrlandconservancy.org/",
+        role: "Producer",
+        site: "ecoToken",
+        companyName: "Western Reserve Land Conservancy ",
+    },
+    {
+        email: "user@kingcounty.gov",
+        walletAddress: "4",
+        lastName: "https://kingcounty.gov/depts/dnrp.aspx",
+        username: "kingcounty",
+        role: "Producer",
+        site: "ecoToken",
+        companyName: "King County Department of Natural Resources and Parks",
+    },

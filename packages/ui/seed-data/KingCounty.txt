@@ -1,0 +1,74 @@
+
+Site:  https://app.regen.network/project/C02-001
+image link: https://regen-registry-server.herokuapp.com/image/projects/C02/kings-county.jpg
+
+
+title: King County Urban Forest Carbon Project
+
+intro:
+Launched in May 2019, King County’s Forest Carbon Project confronts climate change by offering local companies the opportunity to offset their carbon emissions by keeping forests intact here in the region, making it possible for their employees and their families to explore and enjoy the protected outdoor spaces.
+
+project:
+<p>Launched in May 2019, King County’s Forest Carbon Project confronts climate change by offering local companies the opportunity to offset their carbon emissions by keeping forests intact here in the region, making it possible for their employees and their families to explore and enjoy the protected outdoor spaces.
+</p> 
+<p>Preservation of the Project is important as intact forests of this size are becoming increasingly rare in Richland County due to agricultural development and urban expansion. Indeed, surrounding forested land is being rapidly converted into agricultural land and is facing a continued threat of urban expansion from the adjacent Village of Lexington.
+</p> <p>The Project contains a diverse, 85-year forest including yellow poplar, sugar maple, oak, black cherry, and pine. Preservation of this forest will offer the residents of Northeast Ohio a wide variety of community and conservation benefits.</p>
+
+overview:
+<p><b>Offset Generation Method</b><br>Avoided Emissions</p>
+<p><b>Project Activity</b><br>Tree Preservation</p>
+<p><b>Project Type</b><br>Agriculture Forestry and Other Land Use</p>
+<p><b>Documents</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2018/04/King-County-Project-Design-Document.pdf" target="_new">Project Design Document</a></p>
+<p><b>Reference ID (cfc project id)</b><br><a href="https://www.cityforestcredits.org/carbon-credits/carbon-registry/king-county-forest-carbon-offsets/" target="_new">1.2018</a></p>
+<p><b>Offset Protocol</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2022/07/City-Forest-Preservation-Protocol-100-Years-V11.100.pdf" target="_new">Preservation Protocol - 40 years</a></p>
+
+
+
+    {
+        title: "King County Urban Forest Carbon Project",
+        shortTitle: "King County Urban Forest",
+        identifier: "KingCounty001",
+        producer: "King County Department of Natural Resources and Parks",
+        intro: "Launched in May 2019, King County’s Forest Carbon Project confronts climate change by offering local companies the opportunity to offset their carbon emissions by keeping forests intact here in the region, making it possible for their employees and their families to explore and enjoy the protected outdoor spaces.",
+        location: "King County",
+        benefits: ["Preservation", "Wildlife Habitat", "Climate"],
+        project: `<p>Launched in May 2019, King County’s Forest Carbon Project confronts climate change by offering local companies the opportunity to offset their carbon emissions by keeping forests intact here in the region, making it possible for their employees and their families to explore and enjoy the protected outdoor spaces.
+</p> 
+<p>Preservation of the Project is important as intact forests of this size are becoming increasingly rare in Richland County due to agricultural development and urban expansion. Indeed, surrounding forested land is being rapidly converted into agricultural land and is facing a continued threat of urban expansion from the adjacent Village of Lexington.
+</p> <p>The Project contains a diverse, 85-year forest including yellow poplar, sugar maple, oak, black cherry, and pine. Preservation of this forest will offer the residents of Northeast Ohio a wide variety of community and conservation benefits.</p>`,
+        overview: `<p><b>Offset Generation Method</b><br>Avoided Emissions</p>
+        <p><b>Project Activity</b><br>Tree Preservation</p>
+        <p><b>Project Type</b><br>Agriculture Forestry and Other Land Use</p>
+        <p><b>Documents</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2021/07/Sandy-Cross-Project-Design-Document-1.pdf" target="_new">Project Design Document</a></p>
+        <p><b>Reference ID (cfc project id)</b><br><a href="https://www.cityforestcredits.org/carbon-credits/carbon-registry/mansfield-forest-carbon-offsets/" target="_new">Sandy Cross Forest</a></p>
+        <p><b>Offset Protocol</b><br><a href="https://www.cityforestcredits.org/wp-content/uploads/2022/07/City-Forest-Preservation-Protocol-40-Years-V11.40.pdf" target="_new">Preservation Protocol - 40 years</a></p>`,
+        process: "",
+        listImage:
+            "https://regen-registry-server.herokuapp.com/image/projects/C02/kings-county.jpg",
+        headImage:
+            "https://regen-registry-server.herokuapp.com/image/projects/C02/kings-county.jpg",
+        site: "ecoToken",
+        status: "ACTIVE",
+        creditType: "CARBON",
+        fundAmount: 0,
+        fundRecieved: 0,
+        return: 0,
+        dateStart: new Date("2018-12-14"),
+        dateEnd: new Date("2118-12-14"),
+    },
+
+
+    {
+        project: "KingCounty001",
+        seriesName: "KingCounty001",
+        seriesImage: "",
+        seriesType: "C02",
+        regenBatch: "C02-001-20180101-20181231-001",
+        setAmount: 5553,
+        totalCredits: 26,
+        creditPrice: 31.45,
+        retireWallet: "",
+        recieveWallet: "",
+        creditWallet: "",
+        creditKey: "",
+    },

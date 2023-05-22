@@ -1,0 +1,20 @@
+<!--
+  ~ Copyright (C) 2023 EcoToken Systems
+  ~
+  ~ This program is free software: you can redistribute it and/or modify
+  ~ it under the terms of the GNU Affero General Public License as
+  ~ published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU Affero General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public License
+  ~ along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16.5544 21.825L29.6991 11.2125L27.5625 9.525L16.5544 18.4125L10.9807 13.9125L8.89058 15.6L16.5544 21.825ZM19.2948 30C16.7557 30 14.3559 29.6062 12.0955 28.8187C9.83501 28.0312 7.86099 26.9562 6.17339 25.5937C4.4858 24.2312 3.1543 22.6375 2.1789 20.8125C1.2035 18.9875 0.715805 17.05 0.715805 15C0.715805 12.925 1.2035 10.975 2.1789 9.15C3.1543 7.325 4.4858 5.7375 6.17339 4.3875C7.86099 3.0375 9.83501 1.96875 12.0955 1.18125C14.3559 0.39375 16.7557 0 19.2948 0C21.8649 0 24.2802 0.39375 26.5407 1.18125C28.8011 1.96875 30.7674 3.0375 32.4395 4.3875C34.1116 5.7375 35.4354 7.325 36.4108 9.15C37.3862 10.975 37.8739 12.925 37.8739 15C37.8739 17.05 37.3862 18.9875 36.4108 20.8125C35.4354 22.6375 34.1116 24.2312 32.4395 25.5937C30.7674 26.9562 28.8011 28.0312 26.5407 28.8187C24.2802 29.6062 21.8649 30 19.2948 30ZM19.2948 27.75C23.6919 27.75 27.4232 26.5062 30.4887 24.0187C33.5542 21.5312 35.087 18.525 35.087 15C35.087 11.45 33.5542 8.4375 30.4887 5.9625C27.4232 3.4875 23.6919 2.25 19.2948 2.25C14.9288 2.25 11.2052 3.4875 8.12419 5.9625C5.04317 8.4375 3.50266 11.45 3.50266 15C3.50266 18.525 5.04317 21.5312 8.12419 24.0187C11.2052 26.5062 14.9288 27.75 19.2948 27.75Z" fill="#00AEEF"/>
+</svg>

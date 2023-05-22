@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "type-check",
+			"problemMatcher": [],
+			"label": "npm: type-check",
+			"detail": "turbo type-check"
+		}
+	]
+}

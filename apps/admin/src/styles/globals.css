@@ -1,0 +1,46 @@
+@import url("https://rsms.me/inter/inter.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    :root {
+        font-family: "Inter var", sans-serif;
+    }
+}
+
+* {
+    @apply transition-all;
+}
+
+html {
+    @apply box-border;
+}
+body {
+    @apply m-0 h-screen w-screen p-0;
+}
+
+#__next {
+    @apply h-full w-full bg-slate-100 text-sm font-medium;
+}
+#__next #grid {
+    @apply fixed top-0 left-0 grid h-screen w-screen;
+    /*  grid-cols-[max-content,auto] grid-rows-[max-content,auto] */
+    grid-template-columns: max-content auto;
+    grid-template-rows: minmax(0, 60px) auto;
+}
+#__next #sidebar {
+    @apply col-start-1 col-end-2 row-start-1 row-end-3;
+}
+#__next #navbar {
+    @apply col-start-2 col-end-3 row-start-1 row-end-2;
+}
+#__next #main {
+    @apply col-start-2 col-end-3 row-start-2 row-end-3 bg-slate-50;
+}
+/*  border-b border-slate-300 px-4 */

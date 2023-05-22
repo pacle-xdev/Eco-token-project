@@ -1,0 +1,19 @@
+{
+	"name": "@ecotoken/prettier-config",
+	"private": true,
+	"main": "index.js",
+	"version": "0.0.0",
+	"files": [
+		"index.cjs"
+	],
+	"devDependencies": {
+		"@types/prettier": "^2.7.2",
+		"prettier": "^2.8.4",
+		"prettier-plugin-tailwindcss": "^0.2.4"
+	},
+	"peerDependencies": {
+		"@types/prettier": "2.7.2",
+		"prettier": "^2.7.2"
+	},
+	"license": "AGPL-3.0-or-later"
+}

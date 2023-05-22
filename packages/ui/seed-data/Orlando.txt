@@ -1,0 +1,63 @@
+
+Site:  https://app.regen.network/project/C02-001
+image link: https://regen-registry-server.herokuapp.com/image/projects/C02/kings-county.jpg
+
+
+title: Lapin Septic Treatment System
+
+intro:
+
+
+project:
+<p>
+</p> 
+<p>
+</p> <p></p>
+
+overview:
+<p><b>Offset Generation Method</b><br>Creating RH2O - Class 2 Agriculture Water</p>
+<p><b>Project Activity</b><br>Sewage water to Agriculture Water</p>
+<p><b>Project Type</b><br>Water Treatment</p>
+
+
+
+  {
+        title: "Lapin Septic Treatment System",
+        shortTitle: "Lapin Septic Treatment",
+        identifier: "Lapin001",
+        producer: "NOAH Solutions",
+        intro: "Launched in May 2021, NOAH Solutions and Lapin Services will treat up to 18,000 gallons of water into essentially distilled water.",
+        location: "Orlando",
+        benefits: ["Preservation", "Wildlife Habitat", "Climate"],
+        project: `<p>Launched in May 2021, NOAH Solutions and Lapin Services will treat up to 18,000 gallons of water into essentially distilled water.</p>`,
+        overview: `<p><b>Offset Generation Method</b><br>RH2O</p>
+        <p><b>Project Activity</b><br>Septic Water Treatment</p>
+        <p><b>Project Type</b><br>Dehumidifaction System</p>`,
+        process: "",
+        listImage: "https://eco-token.io/images/ecoproject/head_lapin-01.jpg",
+        headImage: "https://eco-token.io/images/ecoproject/head_lapin-01.jpg",
+        site: "ecoToken",
+        status: "ACTIVE",
+        creditType: "WATER",
+        fundAmount: 0,
+        fundRecieved: 0,
+        return: 0,
+        dateStart: new Date("2023-05-14"),
+        dateEnd: new Date("2028-12-14"),
+    },
+
+
+    {
+        project: "KingCounty001",
+        seriesName: "KingCounty001",
+        seriesImage: "",
+        seriesType: "C02",
+        regenBatch: "C02-001-20180101-20181231-001",
+        setAmount: 5553,
+        totalCredits: 26,
+        creditPrice: 31.45,
+        retireWallet: "",
+        recieveWallet: "",
+        creditWallet: "",
+        creditKey: "",
+    },

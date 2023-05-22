@@ -1,0 +1,30 @@
+
+LOCATIONS
+
+ecoLocation
+
+=========
+
+location: Central Valley, California
+cn: US
+st: CA
+
+=========
+location: King County, Washington
+cn: US
+st: WA
+=========
+
+location: Lexington
+cn: US
+st: OH
+
+=========
+
+location: Orlando
+cn: US
+st: FL
+
+=========
+
+

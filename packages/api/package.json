@@ -1,0 +1,52 @@
+{
+    "name": "@ecotoken/api",
+    "version": "0.0.0",
+    "main": "./index.ts",
+    "types": "./index.ts",
+    "private": true,
+    "scripts": {
+        "clean": "run-script-os",
+        "clean:windows": "del /f /s node_modules",
+        "clean:default": "rm -rf node_modules",
+        "lint": "eslint . --ext .ts,.tsx",
+        "type-check": "tsc --noEmit"
+    },
+    "dependencies": {
+        "@aws-sdk/client-s3": "^3.287.0",
+        "@aws-sdk/s3-request-presigner": "^3.287.0",
+        "@cosmjs/cosmwasm-stargate": "^0.30.0",
+        "@cosmjs/launchpad": "^0.27.1",
+        "@cosmjs/proto-signing": "^0.30.0",
+        "@cosmjs/stargate": "^0.30.0",
+        "@cosmos-client/core": "^0.46.1",
+        "@ecotoken/auth": "^0.0.0",
+        "@ecotoken/db": "^0.0.0",
+        "@ecotoken/email": "^0.0.0",
+        "@metaplex-foundation/js": "^0.18.3",
+        "@napi-rs/canvas": "^0.1.38",
+        "@paralleldrive/cuid2": "^2.2.0",
+        "@regen-network/api": "^0.5.0",
+        "@types/coingecko-api": "^1.0.10",
+        "argon2": "^0.30.3",
+        "bs58": "^5.0.0",
+        "coingecko-api": "^1.0.10",
+        "decimal.js": "^10.4.3",
+        "next": "^13.2.3",
+        "tweetnacl": "^1.0.3"
+    },
+    "peerDependencies": {
+        "@trpc/client": "^10.12.0",
+        "@trpc/server": "^10.12.0",
+        "superjson": "^1.9.1",
+        "zod": "^3.18.0"
+    },
+    "devDependencies": {
+        "@trpc/client": "^10.14.1",
+        "@trpc/server": "^10.14.1",
+        "eslint": "^8.35.0",
+        "superjson": "^1.12.2",
+        "typescript": "^5.0.0",
+        "zod": "^3.21.4"
+    },
+    "license": "AGPL-3.0-or-later"
+}

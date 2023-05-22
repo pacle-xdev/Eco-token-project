@@ -1,0 +1,47 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"pipeline": {
+		"db:generate": {
+			"inputs": ["prisma/schema.prisma"],
+			"cache": false
+		},
+		"db:push": {
+			"inputs": ["prisma/schema.prisma"],
+			"cache": false
+		},
+		"db:seed": {
+			"inputs": ["prisma/schema.prisma"],
+			"cache": false
+		},
+		"db:studio": {
+			"inputs": ["prisma/schema.prisma"],
+			"cache": false
+		},
+		"dev": {
+			"cache": false,
+            "persistent": true
+		},
+		"build": {
+			"dependsOn": ["^build", "^db:generate"],
+			"outputs": [
+				".next/**",
+				".expo/**",
+				"storybook-static/**",
+				"dist/**"
+			]
+		},
+		"lint": {},
+        "lint:fix": {},
+		"clean": {
+			"cache": false
+		},
+		"//#clean": {
+			"cache": false
+		},
+		"type-check": {
+			"dependsOn": ["^db:generate"],
+			"cache": false
+		}
+	},
+	"globalEnv": ["DATABASE_URL", "VERCEL", "VERCEL_URL", "PORT", "NODE_ENV", "NEXT_PUBLIC_CDN_URL", "NEXT_PUBLIC_SOLANA_RPC"]
+}

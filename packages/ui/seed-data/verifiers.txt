@@ -1,0 +1,17 @@
+
+VERIFIERS
+
+Role: verifier
+
+=========
+
+companyName: Regen Network 
+email:monitoring@regen.network
+
+=========
+
+companyName: WaterDAO
+website (put in LastName): https://www.rh2o.app
+email:aaron@wacomet.com 
+
+=========
